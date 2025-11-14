@@ -37,6 +37,8 @@ kotlin {
 }
 
 dependencies {
+    implementation(project(":core:common"))
+    implementation(project(":core:util"))
     implementation(project(":core:designsystem"))
     implementation(project(":domain"))
     implementation(platform(libs.androidx.compose.bom))
@@ -64,6 +66,7 @@ dependencies {
 
     // Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_something_wrong">Something went wrong</string>
+    <string name="error_unable_load_properties">Unable to load properties</string>
+    <string name="retry">Retry</string>
+</resources>

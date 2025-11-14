@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.0"
+agp = "8.13.1"
 kotlin = "2.2.20"
 ksp = "2.2.20-2.0.2"
 coreKtx = "1.17.0"
@@ -12,12 +12,12 @@ composeBom = "2025.10.01"
 koin = "4.1.1"
 koin-annotations = "2.3.0"
 ktor = "3.3.1"
-room = "2.8.3"
 orbit = "10.0.0"
 navigation = "2.9.5"
 coil = "3.3.0"
 kermit = "2.0.8"
 coroutines = "1.10.2"
+mockk = "1.14.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,6 +37,8 @@ androidx-compose-material-icons-extended = { group = "androidx.compose.material"
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk"}
 
 # Koin
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
@@ -57,7 +59,6 @@ orbit-core = { module = "org.orbit-mvi:orbit-core", version.ref = "orbit" }
 orbit-vm = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit" }
 orbit-compose = { module = "org.orbit-mvi:orbit-compose", version.ref = "orbit" }
 orbit-test = { module = "org.orbit-mvi:orbit-test", version.ref = "orbit" }
-orbit-syntax-simple = { module = "org.orbit-mvi:orbit-syntax-simple", version.ref = "orbit" }
 
 #Coil
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
@@ -73,7 +74,6 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-androidx-room = { id = "androidx.room", version.ref = "room" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }

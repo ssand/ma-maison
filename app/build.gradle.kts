@@ -54,7 +54,9 @@ kotlin {
 }
 
 dependencies {
+    implementation(project(":core:util"))
     implementation(project(":core:data"))
+    implementation(project(":core:common"))
     implementation(project(":core:designsystem"))
     implementation(project(":domain"))
     implementation(project(":presentation:properties"))
