@@ -1,7 +1,7 @@
 package com.bitklog.presentation.propertydetails
 
 import androidx.lifecycle.ViewModel
-import com.bitklog.core.common.R
+import com.bitklog.core.commonres.R
 import com.bitklog.domain.model.Property
 import com.bitklog.domain.repository.PropertyRepository
 import org.koin.core.annotation.Factory
@@ -59,7 +59,7 @@ class PropertyDetailsVewModel(private val propertyRepository: PropertyRepository
 
 data class PropertyDetailsUiState(
     val property: Property? = null, // could be mapped to a UI specific model, but in this case it doesn't make sense
-    val isLoading: Boolean = true,
+    val isLoading: Boolean = false,
     val errorMessageResId: Int? = null
 )
 

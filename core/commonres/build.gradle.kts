@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.bitklog.core.common"
+    namespace = "com.bitklog.core.commonres"
     compileSdk {
         version = release(36)
     }

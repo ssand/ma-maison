@@ -1,6 +1,6 @@
 package com.bitklog.presentation.properties
 
-import com.bitklog.core.common.R
+import com.bitklog.core.commonres.R
 import com.bitklog.core.util.TestDispatcherRule
 import com.bitklog.domain.model.Property
 import com.bitklog.domain.repository.PropertyRepository
@@ -25,7 +25,7 @@ class PropertiesViewModelTest {
         viewModel.test(this) {
             viewModel.onAction(PropertiesAction.Refresh)
             expectState(PropertiesUiState(isLoading = true))
-            expectState(PropertiesUiState(properties = dummyProperties))
+            expectState(PropertiesUiState(properties = dummyProperties, isLoading = false))
             expectNoItems()
         }
     }
@@ -38,7 +38,7 @@ class PropertiesViewModelTest {
         viewModel.test(this) {
             viewModel.onAction(PropertiesAction.Refresh)
             expectState(PropertiesUiState(isLoading = true))
-            expectState(PropertiesUiState(errorMessageResId = R.string.error_unable_load_properties))
+            expectState(PropertiesUiState(errorMessageResId = R.string.error_unable_load_properties, isLoading = false))
             expectNoItems()
         }
     }
@@ -50,11 +50,7 @@ class PropertiesViewModelTest {
         val propertyId = 42
 
         viewModel.test(this) {
-            viewModel.onAction(PropertiesAction.Refresh)
-            skipItems(2) // loading + success from refresh
-
             viewModel.onAction(PropertiesAction.PropertySelected(propertyId))
-
             expectSideEffect(PropertiesSideEffect.NavigateToPropertyDetails(propertyId))
             expectNoItems()
         }

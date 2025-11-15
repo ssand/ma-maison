@@ -1,7 +1,7 @@
 package com.bitklog.presentation.properties
 
 import androidx.lifecycle.ViewModel
-import com.bitklog.core.common.R
+import com.bitklog.core.commonres.R
 import com.bitklog.domain.model.Property
 import com.bitklog.domain.repository.PropertyRepository
 import org.koin.core.annotation.Factory

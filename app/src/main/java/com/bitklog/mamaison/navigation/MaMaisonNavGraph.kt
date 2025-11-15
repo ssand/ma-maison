@@ -13,10 +13,10 @@ import com.bitklog.presentation.propertydetails.propertyDetails
 
 @Composable
 fun MaMaisonNavGraph(
+    modifier: Modifier = Modifier,
     navHostController: NavHostController,
     startDestination: Destination = PropertiesDestination,
-    snackbarHostState: SnackbarHostState,
-    modifier: Modifier = Modifier
+    snackbarHostState: SnackbarHostState
 ) {
     NavHost(
         modifier = modifier,

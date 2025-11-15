@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ma Maison"
 include(":app")
-include(":core:common")
+include(":core:commonres")
 include(":core:data")
 include(":core:designsystem")
 include(":core:util")

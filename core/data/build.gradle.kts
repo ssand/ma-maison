@@ -55,4 +55,7 @@ dependencies {
     implementation(libs.kermit)
 
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.ktor.client.mock)
+    testImplementation(libs.mockk)
 }

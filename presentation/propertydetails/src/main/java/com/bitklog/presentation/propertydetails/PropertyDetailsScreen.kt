@@ -18,7 +18,7 @@ import androidx.compose.material.icons.outlined.HomeWork
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.MeetingRoom
 import androidx.compose.material.icons.outlined.Straighten
-import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -35,7 +35,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
-import com.bitklog.core.common.R
+import com.bitklog.core.commonres.R
 import com.bitklog.core.designsystem.component.ErrorContent
 import com.bitklog.core.designsystem.component.ProgressOverlay
 import com.bitklog.core.designsystem.theme.Dimen
@@ -138,7 +138,7 @@ fun PropertyDetailsContent(
 
         HorizontalDivider(modifier = Modifier.padding(horizontal = Dimen.padding_m))
 
-        ElevatedCard(modifier = Modifier.padding(horizontal = Dimen.padding_m)) {
+        Card(modifier = Modifier.padding(horizontal = Dimen.padding_m)) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -176,7 +176,7 @@ fun PropertyDetailsContent(
         }
 
         property.professional?.let { professional ->
-            ElevatedCard(modifier = Modifier.padding(horizontal = Dimen.padding_m)) {
+            Card(modifier = Modifier.padding(horizontal = Dimen.padding_m)) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()

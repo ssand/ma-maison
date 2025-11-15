@@ -37,7 +37,7 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":core:common"))
+    implementation(project(":core:commonres"))
     implementation(project(":core:util"))
     implementation(project(":core:designsystem"))
     implementation(project(":domain"))
@@ -73,7 +73,11 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.tooling)
 
+    testImplementation(testFixtures(project(":core:util")))
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.orbit.test)
+    testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
