@@ -36,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.bitklog.core.common.R
+import com.bitklog.core.designsystem.component.ErrorContent
 import com.bitklog.core.designsystem.component.ProgressOverlay
 import com.bitklog.core.designsystem.theme.Dimen
 import com.bitklog.core.designsystem.theme.MaMaisonTheme
@@ -78,12 +79,10 @@ fun PropertiesRoute(
 fun PropertiesScreen(
     state: PropertiesUiState,
     onRefresh: () -> Unit,
-    onPropertyClicked: (Int) -> Unit,
-    modifier: Modifier = Modifier
+    onPropertyClicked: (Int) -> Unit
 ) {
     Box(
-        modifier = modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
         when {
             state.isLoading && state.properties.isEmpty() ->
@@ -92,6 +91,8 @@ fun PropertiesScreen(
             state.errorMessageResId != null && state.properties.isEmpty() ->
                 ErrorContent(
                     onRefresh = onRefresh,
+                    errorText = stringResource(R.string.error_something_wrong),
+                    buttonText = stringResource(R.string.retry),
                     modifier = Modifier.align(Alignment.Center)
                 )
 
@@ -207,29 +208,6 @@ private fun PropertyThumbnail(
             contentDescription = contentDescription,
             contentScale = ContentScale.Crop
         )
-}
-
-@Composable
-private fun ErrorContent(
-    onRefresh: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Column(
-        modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = stringResource(R.string.error_something_wrong),
-            style = MaterialTheme.typography.titleMedium
-        )
-
-        Spacer(modifier = Modifier.height(Dimen.padding_s))
-
-        Button(onClick = onRefresh) {
-            Text(text = stringResource(R.string.retry))
-        }
-    }
 }
 
 @Composable

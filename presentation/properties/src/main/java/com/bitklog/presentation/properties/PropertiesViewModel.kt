@@ -50,7 +50,7 @@ class PropertiesViewModel(private val propertyRepository: PropertyRepository) :
                     )
                 }
             },
-            onFailure = { throwable ->
+            onFailure = {
                 reduce {
                     state.copy(
                         isLoading = false,

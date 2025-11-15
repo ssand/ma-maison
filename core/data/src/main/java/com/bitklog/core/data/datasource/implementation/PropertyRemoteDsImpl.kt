@@ -19,6 +19,6 @@ class PropertyRemoteDsImpl(private val apiClient: HttpClient) : PropertyRemoteDs
 
     override suspend fun getProperty(propertyId: Int): PropertyDto =
         apiClient.get {
-            url { appendPathSegments("$propertyId.json") }
+            url { appendPathSegments("listings", "$propertyId.json") }
         }.body()
 }
